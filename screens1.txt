@@ -1,0 +1,139 @@
+﻿    <!-- 01 SPLASH -->
+    <div class="screen active" id="s01">
+      <div class="notch"></div>
+      <div class="sb"><span>9:41</span><span class="r"><svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg></span></div>
+      <div class="splash" onclick="go(2)">
+        <svg class="mark" width="86" height="86" viewBox="0 0 86 86"><circle cx="43" cy="43" r="41" fill="#f1f9f5"/><circle cx="26" cy="30" r="9" fill="#0a6b49"/><circle cx="60" cy="30" r="9" fill="#0a6b49"/><circle cx="43" cy="60" r="9" fill="#0a6b49"/><path d="M26 30 L43 60 L60 30 M26 30 L60 30" stroke="#0a6b49" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M43 40 l3 6 6 1 -4.5 4.5 1 6.5 -5.5 -3 -5.5 3 1-6.5 -4.5-4.5 6-1 z" fill="#c7972f"/></svg>
+        <div class="word"><b>Rab</b><i>ta</i></div>
+        <div class="rb">رابطہ</div>
+        <div class="tag">Connecting Retail · Empowering Trade</div>
+        <div class="dots"><i></i><i></i><i></i></div>
+      </div>
+    </div>
+
+    <!-- 02 WELCOME -->
+    <div class="screen" id="s02">
+      <div class="notch"></div>
+      <div class="sb"><span>9:41</span><span class="r"><svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg></span></div>
+      <div class="hero">
+        <div class="art">
+          <svg width="100%" height="100%" viewBox="0 0 256 320" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0"><path d="M60 80 L128 165 L196 90 M128 165 L128 250" stroke="#0a6b49" stroke-width="2" fill="none" stroke-dasharray="4 5" opacity=".5"/></svg>
+          <div class="node" style="top:56px;left:24px"><span class="ic" style="background:#0a6b49"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 9h18l-1.5 11H4.5z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></span><span class="t">Retailer<small>Kiryana store</small></span></div>
+          <div class="node" style="top:56px;right:20px"><span class="ic" style="background:#c7972f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></span><span class="t">Distributor<small>Fulfilment</small></span></div>
+          <div class="node" style="top:220px;left:50%;transform:translateX(-50%)"><span class="ic" style="background:#053b29"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 21V10l6 3V10l6 3V4l6 3v14z"/></svg></span><span class="t">Manufacturer<small>Supply</small></span></div>
+          <div class="node" style="top:145px;left:50%;transform:translateX(-50%);background:var(--em-700);border:none"><span class="ic" style="background:rgba(255,255,255,.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg></span><span class="t" style="color:#fff">Rabta AI<small style="color:rgba(255,255,255,.75)">Connects all</small></span></div>
+        </div>
+        <div class="pad" style="padding-bottom:22px">
+          <h2 class="h-tt" style="font-size:24px;margin-bottom:8px">Welcome to Rabta</h2>
+          <p style="color:var(--muted);font-size:13.5px;line-height:1.55;margin-bottom:18px">Pakistan's AI-powered FMCG trade network — retailers, distributors and manufacturers, one platform.</p>
+          <button class="btn btn-em" style="width:100%;margin-bottom:10px" onclick="go(3)">Get Started</button>
+          <button class="btn btn-out" style="width:100%" onclick="go(3)">Login</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 LOGIN -->
+    <div class="screen" id="s03">
+      <div class="notch"></div>
+      <div class="sb"><span>9:41</span><span class="r"><svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg></span></div>
+      <div class="pad" style="flex:1;display:flex;flex-direction:column;padding-top:14px">
+        <svg class="mark" width="52" height="52" viewBox="0 0 86 86" style="margin:10px 0 18px"><circle cx="26" cy="30" r="9" fill="#0a6b49"/><circle cx="60" cy="30" r="9" fill="#0a6b49"/><circle cx="43" cy="60" r="9" fill="#0a6b49"/><path d="M26 30 L43 60 L60 30 M26 30 L60 30" stroke="#0a6b49" stroke-width="3.2" fill="none" stroke-linecap="round"/><path d="M43 40 l3 6 6 1 -4.5 4.5 1 6.5 -5.5 -3 -5.5 3 1-6.5 -4.5-4.5 6-1 z" fill="#c7972f"/></svg>
+        <h2 class="h-tt" style="font-size:23px">Welcome back</h2>
+        <p style="color:var(--muted);font-size:13px;margin:6px 0 22px">Log in to manage your trade.</p>
+        <label style="font-size:11.5px;font-weight:600;color:var(--muted);margin-bottom:7px">Phone number</label>
+        <div class="field" style="margin-bottom:14px"><span style="color:var(--ink);font-weight:600;font-size:14px">+92</span><span style="color:#c8d4ce">|</span><span style="color:var(--ink)">300 1234567</span></div>
+        <label style="font-size:11.5px;font-weight:600;color:var(--muted);margin-bottom:7px">Password</label>
+        <div class="field" style="margin-bottom:10px;justify-content:space-between"><span>........</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#647a70" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div style="text-align:right;font-size:12px;color:var(--em-700);font-weight:600;margin-bottom:18px;cursor:pointer" onclick="go(4)">Forgot password?</div>
+        <button class="btn btn-em" style="width:100%" onclick="go(4)">Login</button>
+        <div style="display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--muted);font-size:11.5px"><span style="flex:1;height:1px;background:var(--line)"></span>or continue with<span style="flex:1;height:1px;background:var(--line)"></span></div>
+        <button class="btn btn-out" style="width:100%"><svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.6a4.8 4.8 0 0 1-2.1 3.2v2.6h3.4c2-1.8 3.1-4.5 3.1-7.6z"/><path fill="#34A853" d="M12 22c2.7 0 5-1 6.6-2.4l-3.4-2.6c-.9.6-2 1-3.2 1-2.5 0-4.6-1.7-5.4-4H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.6 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.4L6.6 10c.8-2.3 2.9-4 5.4-4z"/></svg>Continue with Google</button>
+        <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:auto;padding:16px 0">New here? <b style="color:var(--em-700);cursor:pointer" onclick="go(4)">Create Account</b></p>
+      </div>
+    </div>
+
+    <!-- 04 ROLE -->
+    <div class="screen" id="s04">
+      <div class="notch"></div>
+      <div class="sb"><span>9:41</span><span class="r"><svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg></span></div>
+      <div class="pad" style="flex:1;display:flex;flex-direction:column;padding-top:18px">
+        <h2 class="h-tt" style="font-size:25px">Who are you?</h2>
+        <p style="color:var(--muted);font-size:13.5px;margin:6px 0 22px">Choose your business type to continue.</p>
+        <div style="display:flex;flex-direction:column;gap:13px">
+          <div class="role" onclick="go(5)">
+            <span class="ic" style="background:#0a6b49"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 9h18l-1.5 11H4.5z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></span>
+            <div style="flex:1"><h4>Retailer</h4><p>Order, scan shelves, track udhaar</p></div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a6b49" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <div class="role" onclick="go(10)">
+            <span class="ic" style="background:#c7972f"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></span>
+            <div style="flex:1"><h4>Distributor</h4><p>Manage retailers, deliveries, AI</p></div>
+          </div>
+          <div class="role" onclick="go(14)">
+            <span class="ic" style="background:#053b29"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 21V10l6 3V10l6 3V4l6 3v14z"/></svg></span>
+            <div style="flex:1"><h4>Manufacturer</h4><p>Analytics, forecasting, market view</p></div>
+          </div>
+        </div>
+        <button class="btn btn-em" style="width:100%;margin-top:auto;margin-bottom:8px" onclick="go(5)">Continue</button>
+      </div>
+    </div>
+
+    <!-- 05 RETAILER DASHBOARD -->
+    <div class="screen" id="s05">
+      <div class="notch"></div>
+      <div class="sb"><span>9:41</span><span class="r"><svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg></span></div>
+      <div style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+        <div class="topbar">
+          <div><div class="urdu" style="font-size:16px;color:var(--em-700);line-height:1.2">السلام علیکم</div><div style="font-family:'Sora';font-weight:700;font-size:16px">Ali Store</div></div>
+          <div class="avatar" onclick="go(18)">AS</div>
+        </div>
+        <div class="balance">
+          <div class="lbl">Outstanding credit · Udhaar</div>
+          <div class="amt">PKR 42,500</div>
+          <div class="pill" style="background:rgba(255,255,255,.18);color:#fff;margin-top:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg> Due in 3 days · tap to pay</div>
+        </div>
+        <div class="mini">
+          <div class="card"><div class="lbl">Last order</div><div class="v">PKR 18,200</div><div style="font-size:10px;color:var(--muted);margin-top:2px">2 days ago · delivered</div></div>
+          <div class="card"><div class="lbl">Pending deliveries</div><div class="v" style="color:var(--gold)">1 order</div><div style="font-size:10px;color:var(--muted);margin-top:2px">arriving today</div></div>
+        </div>
+        <div class="actions">
+          <div class="act hl" onclick="go(6)"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><div><div class="t">Speak Order</div><div class="s">Order in Urdu</div></div></div>
+          <div class="act" onclick="go(8)"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></span><div><div class="t">Scan Shelf</div><div class="s">AI stock check</div></div></div>
+          <div class="act" onclick="go(7)"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l2 12h11l2-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg></span><div><div class="t">Order Again</div><div class="s">Repeat last</div></div></div>
+          <div class="act" onclick="go(20)"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v5h5"/><path d="M3 8a9 9 0 1 0 3-6"/><path d="M12 7v5l3 2"/></svg></span><div><div class="t">Order History</div><div class="s">Past invoices</div></div></div>
+        </div>
+        <div class="nav">
+          <a class="act"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+          <a onclick="go(20)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14h18V6l-3-4z"/><path d="M3 6h18M9 10a3 3 0 0 0 6 0"/></svg>Orders</a>
+          <a><span class="fab" onclick="go(6)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg></span></a>
+          <a onclick="go(22)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="3"/><path d="M2 10h20M16 15h2"/></svg>Wallet</a>
+          <a onclick="go(18)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>Profile</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 06 VOICE ORDER -->
+    <div class="screen" id="s06">
+      <div class="notch"></div>
+      <div class="sb"><span>9:41</span><span class="r"><svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg></span></div>
+      <div class="voice">
+        <div class="pad" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding-top:6px">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1a15" stroke-width="2" onclick="back()" style="cursor:pointer"><path d="M15 6l-6 6 6 6"/></svg>
+          <span style="font-family:'Sora';font-weight:600;font-size:15px">Voice Order</span>
+          <span class="pill" style="background:var(--em-50);color:var(--em-700)">● Listening</span>
+        </div>
+        <div class="orb" style="margin-top:22px"><span class="ring"></span><span class="ring"></span><span class="ring"></span><span class="core"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span></div>
+        <div class="wave"><i style="animation-delay:0s"></i><i style="animation-delay:.15s"></i><i style="animation-delay:.3s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.25s"></i><i style="animation-delay:.05s"></i><i style="animation-delay:.2s"></i></div>
+        <div style="font-family:'Sora';font-weight:600;font-size:15px;margin-top:14px">Hold to Speak</div>
+        <div style="font-size:11.5px;color:var(--muted);margin-top:4px">Speak in Urdu — Rabta builds the order</div>
+        <div class="trans">
+          <div class="u">پانچ کریٹ کوکا کولا اور دو درجن شان مصالحہ</div>
+          <div style="font-size:10.5px;font-weight:600;color:var(--muted);margin:6px 0 2px">DETECTED PRODUCTS</div>
+          <div class="line-item"><span class="n">Coca-Cola 1.5L</span><span class="q">5 crates</span></div>
+          <div class="line-item"><span class="n">Shan Masala (mix)</span><span class="q">24 units</span></div>
+        </div>
+        <div class="pad" style="width:100%;margin-top:auto;padding-bottom:18px;padding-top:14px">
+          <button class="btn btn-em" style="width:100%" onclick="go(9)">Confirm Order · 2 items</button>
+        </div>
+      </div>
+    </div>

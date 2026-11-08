@@ -1,0 +1,2 @@
+</style></head><body>
+<div id="app"><div class="device"><span class="btn-r"></span>

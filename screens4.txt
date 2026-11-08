@@ -1,0 +1,52 @@
+    <!-- 22 WALLET -->
+    <div class="screen" id="s22">
+      <div class="notch"></div>
+      <div class="sb"><span>9:41</span><span class="r"><svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg></span></div>
+      <div class="hd"><svg class="bk" viewBox="0 0 24 24" fill="none" stroke="#0f1a15" stroke-width="2" onclick="back()" style="cursor:pointer"><path d="M15 6l-6 6 6 6"/></svg><span class="ti">Wallet</span></div>
+      <div class="balance">
+        <div class="lbl">Outstanding credit · Udhaar</div>
+        <div class="amt">PKR 42,500</div>
+        <div class="pill" style="background:rgba(255,255,255,.18);color:#fff;margin-top:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg> Due in 3 days · tap to pay</div>
+      </div>
+      <div class="mini">
+        <div class="card"><div class="lbl">Available credit limit</div><div class="v">PKR 57,500</div></div>
+        <div class="card"><div class="lbl">Paid last 30 days</div><div class="v">PKR 96,300</div></div>
+      </div>
+      <div class="sec" style="padding:16px 20px 6px">Recent transactions</div>
+      <div class="scroll">
+        <div class="lr"><span class="av" style="background:var(--em-600)">₨</span><div style="flex:1"><div class="nm">Payment · Mehran Traders</div><div class="sub">Cleared udhaar · 3 days ago</div></div><span class="pill p-gr">-18,200</span></div>
+        <div class="lr"><span class="av" style="background:var(--gold)">₨</span><div style="flex:1"><div class="nm">Order #RB-20482</div><div class="sub">Added to udhaar · today</div></div><span class="pill p-am">+31,400</span></div>
+        <div class="lr"><span class="av" style="background:var(--em-900)">₨</span><div style="flex:1"><div class="nm">Payment · Mehran Traders</div><div class="sub">Cleared udhaar · 2 weeks ago</div></div><span class="pill p-gr">-9,800</span></div>
+      </div>
+      <div class="pad" style="padding:12px 20px 18px"><button class="btn btn-em" style="width:100%" onclick="go(5)">Pay Now</button></div>
+    </div>
+
+    <!-- 23 INVENTORY -->
+    <div class="screen" id="s23">
+      <div class="notch"></div>
+      <div class="sb"><span>9:41</span><span class="r"><svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg><svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg></span></div>
+      <div class="hd"><svg class="bk" viewBox="0 0 24 24" fill="none" stroke="#0f1a15" stroke-width="2" onclick="back()" style="cursor:pointer"><path d="M15 6l-6 6 6 6"/></svg><span class="ti">Inventory</span><span class="pill p-gr">24 SKUs</span></div>
+      <div class="search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#647a70" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>Search stock…</div>
+      <div class="scroll" style="padding:0 20px">
+        <div class="card" style="padding:12px;margin-bottom:10px;display:flex;gap:11px;align-items:center">
+          <div style="width:44px;height:44px;border-radius:12px;background:#fbeae8;display:flex;align-items:center;justify-content:center;font-size:20px">🥤</div>
+          <div style="flex:1"><div style="font-family:'Sora';font-weight:600;font-size:13px">Coca-Cola 1.5L</div><div style="font-size:10.5px;color:var(--muted);margin-top:2px">Warehouse A · Karachi</div></div>
+          <div style="text-align:right"><div style="font-family:'Sora';font-weight:800;color:var(--red);font-size:15px">42</div><div style="font-size:9px;color:var(--muted)">crates left</div></div>
+        </div>
+        <div class="card" style="padding:12px;margin-bottom:10px;display:flex;gap:11px;align-items:center">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:20px">🧂</div>
+          <div style="flex:1"><div style="font-family:'Sora';font-weight:600;font-size:13px">Shan Masala</div><div style="font-size:10.5px;color:var(--muted);margin-top:2px">Warehouse A · Karachi</div></div>
+          <div style="text-align:right"><div style="font-family:'Sora';font-weight:800;color:var(--gold);font-size:15px">96</div><div style="font-size:9px;color:var(--muted)">units left</div></div>
+        </div>
+        <div class="card" style="padding:12px;margin-bottom:10px;display:flex;gap:11px;align-items:center">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--em-50);display:flex;align-items:center;justify-content:center;font-size:20px">🍜</div>
+          <div style="flex:1"><div style="font-family:'Sora';font-weight:600;font-size:13px">Knorr Noodles</div><div style="font-size:10.5px;color:var(--muted);margin-top:2px">Warehouse B · Karachi</div></div>
+          <div style="text-align:right"><div style="font-family:'Sora';font-weight:800;color:var(--em-700);font-size:15px">310</div><div style="font-size:9px;color:var(--muted)">boxes left</div></div>
+        </div>
+        <div class="card" style="padding:12px;display:flex;gap:11px;align-items:center">
+          <div style="width:44px;height:44px;border-radius:12px;background:var(--em-50);display:flex;align-items:center;justify-content:center;font-size:20px">🧴</div>
+          <div style="flex:1"><div style="font-family:'Sora';font-weight:600;font-size:13px">Lifebuoy Soap</div><div style="font-size:10.5px;color:var(--muted);margin-top:2px">Warehouse A · Karachi</div></div>
+          <div style="text-align:right"><div style="font-family:'Sora';font-weight:800;color:var(--em-700);font-size:15px">560</div><div style="font-size:9px;color:var(--muted)">units left</div></div>
+        </div>
+      </div>
+    </div>

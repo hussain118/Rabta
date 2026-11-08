@@ -1,0 +1,36 @@
+var cur = 1;
+var hist = [];
+var total = 23;
+
+function show(n) {
+  var el = document.getElementById('s' + (n < 10 ? '0' + n : n));
+  if (!el) return;
+  document.querySelectorAll('.screen').forEach(function (s) { s.classList.remove('active'); });
+  el.classList.add('active');
+  cur = n;
+  var scroller = el.querySelector('.scroll');
+  if (scroller) scroller.scrollTop = 0;
+}
+
+function go(n) {
+  if (n === cur) return;
+  hist.push(cur);
+  show(n);
+}
+
+function back() {
+  var prev = hist.pop();
+  show(prev === undefined ? 1 : prev);
+}
+
+function restartApp() {
+  hist = [];
+  show(1);
+}
+
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') back();
+});
+
+show(1);
+setTimeout(function () { if (cur === 1) go(2); }, 2200);

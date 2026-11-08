@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rabta — UI Prototype</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --em-900:#053b29; --em-700:#0a6b49; --em-600:#0d7d55; --em-500:#12946a;
+  --em-100:#e3f3ec; --em-50:#f1f9f5;
+  --gold:#c7972f; --gold-soft:#f4e8c6;
+  --ink:#0f1a15; --muted:#647a70; --line:#e8eeeb;
+  --white:#fff; --bg:#eef1f0;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:56px 24px 80px}
+.masthead{margin-bottom:44px}
+.masthead .kick{font-family:'Sora';font-weight:700;letter-spacing:.28em;font-size:11px;color:var(--em-700);text-transform:uppercase}
+.masthead h1{font-family:'Sora';font-weight:800;font-size:34px;margin:10px 0 8px;letter-spacing:-.02em}
+.masthead p{color:var(--muted);font-size:15px;max-width:560px;line-height:1.55}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:52px 40px;justify-items:center}
+.frame{width:300px}
+.frame .cap{display:flex;align-items:baseline;gap:8px;margin:16px 2px 0}
+.frame .cap .no{font-family:'Sora';font-weight:700;font-size:12px;color:var(--gold);letter-spacing:.05em}
+.frame .cap .nm{font-family:'Sora';font-weight:600;font-size:13px;color:var(--ink)}
+.frame .cap .dc{font-size:12px;color:var(--muted);margin-left:auto}
+
+/* device */
+.device{position:relative;width:300px;height:620px;background:#0c0c0d;border-radius:46px;padding:11px;
+  box-shadow:0 2px 4px rgba(0,0,0,.4),0 26px 50px -18px rgba(6,40,28,.5),inset 0 0 0 2px #2a2a2c}
+.device::before,.device::after{content:"";position:absolute;left:-2px;width:3px;border-radius:3px 0 0 3px;background:#242427}
+.device::before{top:120px;height:26px}
+.device::after{top:160px;height:48px}
+.btn-r{position:absolute;right:-2px;top:150px;width:3px;height:64px;border-radius:0 3px 3px 0;background:#242427}
+.screen{position:relative;width:100%;height:100%;background:var(--white);border-radius:36px;overflow:hidden;display:flex;flex-direction:column}
+
+/* status bar */
+.sb{height:40px;flex:0 0 40px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:12px;font-weight:600;color:var(--ink);z-index:5}
+.sb.dark{color:#fff}
+.sb .r{display:flex;align-items:center;gap:5px}
+.sb svg{display:block}
+.notch{position:absolute;top:11px;left:50%;transform:translateX(-50%);width:96px;height:24px;background:#0c0c0d;border-radius:0 0 16px 16px;z-index:6}
+
+/* logo mark */
+.mark{display:block}
+
+/* generic */
+.pad{padding:0 22px}
+.h-tt{font-family:'Sora';font-weight:800;letter-spacing:-.02em}
+.urdu{font-family:'Noto Nastaliq Urdu',serif;line-height:2}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;height:52px;border-radius:16px;font-family:'Sora';font-weight:600;font-size:15px;border:none;cursor:pointer}
+.btn-em{background:var(--em-700);color:#fff;box-shadow:0 10px 22px -8px rgba(10,107,73,.6)}
+.btn-out{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.field{height:52px;border:1.5px solid var(--line);border-radius:16px;display:flex;align-items:center;gap:10px;padding:0 16px;color:var(--muted);font-size:14px;background:#fbfdfc}
+.field.focus{border-color:var(--em-500);background:#fff;box-shadow:0 0 0 4px var(--em-50)}
+.pill{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;padding:4px 9px;border-radius:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px}
+
+/* splash */
+.s-splash{align-items:center;justify-content:center;flex:1;display:flex;flex-direction:column;text-align:center;gap:0;background:
+  radial-gradient(120% 60% at 50% 22%, #f4faf7 0%, #fff 60%)}
+.s-splash .word{font-family:'Sora';font-weight:800;font-size:38px;letter-spacing:-.02em;margin-top:24px}
+.s-splash .word b{color:var(--em-700)}.s-splash .word i{color:var(--gold);font-style:normal}
+.s-splash .rb{font-family:'Noto Nastaliq Urdu';font-size:22px;color:var(--gold);margin-top:2px}
+.s-splash .tag{margin-top:12px;font-size:10.5px;font-weight:700;letter-spacing:.24em;color:var(--muted);text-transform:uppercase}
+.s-splash .dots{margin-top:30px;display:flex;gap:6px}
+.s-splash .dots i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.s-splash .dots i:first-child{background:var(--em-600);width:18px;border-radius:3px}
+
+/* welcome hero */
+.hero{flex:1;display:flex;flex-direction:column}
+.hero .art{flex:1;position:relative;background:linear-gradient(160deg,#f1f9f5,#fff)}
+.node{position:absolute;background:#fff;border:1px solid var(--line);border-radius:16px;padding:9px 11px;display:flex;align-items:center;gap:8px;box-shadow:0 8px 20px -10px rgba(6,40,28,.25)}
+.node .ic{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff}
+.node .t{font-family:'Sora';font-weight:600;font-size:12px}
+.node .t small{display:block;font-family:'Inter';font-weight:500;font-size:9.5px;color:var(--muted)}
+
+/* role cards */
+.role{display:flex;align-items:center;gap:14px;padding:16px;border-radius:20px;border:1.5px solid var(--line);background:#fff;cursor:pointer}
+.role.act{border-color:var(--em-500);background:var(--em-50);box-shadow:0 12px 26px -14px rgba(10,107,73,.4)}
+.role .ic{width:48px;height:48px;border-radius:14px;flex:0 0 48px;display:flex;align-items:center;justify-content:center;color:#fff}
+.role h4{font-family:'Sora';font-weight:600;font-size:15px}
+.role p{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+/* dashboard */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:6px 22px 12px}
+.avatar{width:40px;height:40px;border-radius:13px;background:linear-gradient(135deg,var(--em-600),var(--em-900));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Sora';font-weight:700;font-size:15px}
+.balance{margin:2px 22px 0;border-radius:22px;padding:18px 20px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--em-700),var(--em-900))}
+.balance::after{content:"";position:absolute;right:-30px;top:-30px;width:120px;height:120px;border-radius:50%;background:rgba(199,151,47,.22)}
+.balance .lbl{font-size:11px;opacity:.85;font-weight:500}
+.balance .amt{font-family:'Sora';font-weight:800;font-size:26px;margin-top:4px;letter-spacing:-.01em}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 22px 0}
+.mini .card{padding:13px 14px}
+.mini .lbl{font-size:10.5px;color:var(--muted);font-weight:500}
+.mini .v{font-family:'Sora';font-weight:700;font-size:17px;margin-top:5px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 22px 0}
+.act{border-radius:18px;padding:15px;border:1px solid var(--line);background:#fff;display:flex;flex-direction:column;gap:10px;cursor:pointer}
+.act.hl{background:var(--em-700);border-color:var(--em-700);color:#fff}
+.act .ic{width:38px;height:38px;border-radius:12px;background:var(--em-50);display:flex;align-items:center;justify-content:center;color:var(--em-700)}
+.act.hl .ic{background:rgba(255,255,255,.16);color:#fff}
+.act .t{font-family:'Sora';font-weight:600;font-size:13px}
+.act .s{font-size:10.5px;color:var(--muted)}.act.hl .s{color:rgba(255,255,255,.8)}
+
+/* bottom nav */
+.nav{margin-top:auto;height:66px;flex:0 0 66px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-around;padding:0 8px;background:#fff}
+.nav a{display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--muted);font-size:9.5px;font-weight:500}
+.nav a.act{color:var(--em-700)}
+.nav .fab{width:46px;height:46px;border-radius:16px;background:linear-gradient(135deg,var(--em-600),var(--em-900));color:#fff;display:flex;align-items:center;justify-content:center;margin-top:-18px;box-shadow:0 10px 20px -6px rgba(10,107,73,.55)}
+
+/* voice */
+.voice{flex:1;display:flex;flex-direction:column;align-items:center;background:radial-gradient(120% 55% at 50% 40%,#f1f9f5,#fff)}
+.orb{position:relative;width:150px;height:150px;margin:8px 0 6px;display:flex;align-items:center;justify-content:center}
+.orb .ring{position:absolute;inset:0;border-radius:50%;border:2px solid var(--em-500);opacity:.4;animation:pulse 2.4s ease-out infinite}
+.orb .ring:nth-child(2){animation-delay:.8s}.orb .ring:nth-child(3){animation-delay:1.6s}
+@keyframes pulse{0%{transform:scale(.7);opacity:.5}100%{transform:scale(1.25);opacity:0}}
+.orb .core{width:92px;height:92px;border-radius:50%;background:linear-gradient(135deg,var(--em-600),var(--em-900));display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 16px 34px -10px rgba(10,107,73,.6);z-index:2}
+.wave{display:flex;align-items:center;gap:3px;height:26px}
+.wave i{width:3px;background:var(--em-500);border-radius:2px;animation:w 1s ease-in-out infinite}
+@keyframes w{0%,100%{height:6px}50%{height:24px}}
+.trans{margin:14px 22px 0;width:calc(100% - 44px);border-radius:18px;border:1px solid var(--line);background:#fbfdfc;padding:14px 16px}
+.trans .u{font-family:'Noto Nastaliq Urdu';font-size:16px;color:var(--ink);text-align:right;line-height:2.1}
+.line-item{display:flex;align-items:center;justify-content:space-between;padding:9px 0;border-top:1px dashed var(--line)}
+.line-item .n{font-size:12.5px;font-weight:600}
+.line-item .q{font-family:'Sora';font-weight:700;font-size:12.5px;color:var(--em-700)}
+
+.foot-note{text-align:center;margin-top:56px;color:var(--muted);font-size:12.5px;line-height:1.7}
+.foot-note b{color:var(--ink);font-family:'Sora'}
+@media(max-width:640px){.wrap{padding:32px 14px 60px}.masthead h1{font-size:26px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="masthead">
+    <div class="kick">Rabta · رابطہ</div>
+    <h1>Mobile UI Prototype</h1>
+    <p>AI-powered FMCG trade network for Pakistan. Emerald &amp; gold system, Material 3 spacing, mobile-first. Screens 1–6 of the flow — the visual language to sign off before the remaining 15.</p>
+  </div>
+
+  <div class="gallery">
+
+    <!-- 1 SPLASH -->
+    <div class="frame">
+      <div class="device"><span class="btn-r"></span>
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="sb"><span>9:41</span><span class="r">
+            <svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+            <svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg>
+          </span></div>
+          <div class="s-splash">
+            <svg class="mark" width="86" height="86" viewBox="0 0 86 86">
+              <circle cx="43" cy="43" r="41" fill="#f1f9f5"/>
+              <circle cx="26" cy="30" r="9" fill="#0a6b49"/>
+              <circle cx="60" cy="30" r="9" fill="#0a6b49"/>
+              <circle cx="43" cy="60" r="9" fill="#0a6b49"/>
+              <path d="M26 30 L43 60 L60 30 M26 30 L60 30" stroke="#0a6b49" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+              <path d="M43 40 l3 6 6 1 -4.5 4.5 1 6.5 -5.5 -3 -5.5 3 1-6.5 -4.5-4.5 6-1 z" fill="#c7972f"/>
+            </svg>
+            <div class="word"><b>Rab</b><i>ta</i></div>
+            <div class="rb">رابطہ</div>
+            <div class="tag">Connecting Retail · Empowering Trade</div>
+            <div class="dots"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="no">01</span><span class="nm">Splash</span><span class="dc">Brand entry</span></div>
+    </div>
+
+    <!-- 2 WELCOME -->
+    <div class="frame">
+      <div class="device"><span class="btn-r"></span>
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="sb"><span>9:41</span><span class="r">
+            <svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+            <svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg>
+          </span></div>
+          <div class="hero">
+            <div class="art">
+              <svg width="100%" height="100%" viewBox="0 0 256 320" preserveAspectRatio="xMidYMid slice" style="position:absolute;inset:0">
+                <path d="M60 80 L128 165 L196 90 M128 165 L128 250" stroke="#0a6b49" stroke-width="2" fill="none" stroke-dasharray="4 5" opacity=".5"/>
+              </svg>
+              <div class="node" style="top:56px;left:24px"><span class="ic" style="background:#0a6b49"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 9h18l-1.5 11H4.5z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></span><span class="t">Retailer<small>Kiryana store</small></span></div>
+              <div class="node" style="top:56px;right:20px"><span class="ic" style="background:#c7972f"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></span><span class="t">Distributor<small>Fulfilment</small></span></div>
+              <div class="node" style="top:220px;left:50%;transform:translateX(-50%)"><span class="ic" style="background:#053b29"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 21V10l6 3V10l6 3V4l6 3v14z"/></svg></span><span class="t">Manufacturer<small>Supply</small></span></div>
+              <div class="node" style="top:145px;left:50%;transform:translateX(-50%);background:var(--em-700);border:none"><span class="ic" style="background:rgba(255,255,255,.2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg></span><span class="t" style="color:#fff">Rabta AI<small style="color:rgba(255,255,255,.75)">Connects all</small></span></div>
+            </div>
+            <div class="pad" style="padding-bottom:22px">
+              <h2 class="h-tt" style="font-size:24px;margin-bottom:8px">Welcome to Rabta</h2>
+              <p style="color:var(--muted);font-size:13.5px;line-height:1.55;margin-bottom:18px">Pakistan's AI-powered FMCG trade network — retailers, distributors and manufacturers, one platform.</p>
+              <button class="btn btn-em" style="width:100%;margin-bottom:10px">Get Started</button>
+              <button class="btn btn-out" style="width:100%">Login</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="no">02</span><span class="nm">Welcome</span><span class="dc">Onboarding</span></div>
+    </div>
+
+    <!-- 3 LOGIN -->
+    <div class="frame">
+      <div class="device"><span class="btn-r"></span>
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="sb"><span>9:41</span><span class="r">
+            <svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+            <svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg>
+          </span></div>
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;padding-top:14px">
+            <svg class="mark" width="52" height="52" viewBox="0 0 86 86" style="margin:10px 0 18px">
+              <circle cx="26" cy="30" r="9" fill="#0a6b49"/><circle cx="60" cy="30" r="9" fill="#0a6b49"/><circle cx="43" cy="60" r="9" fill="#0a6b49"/>
+              <path d="M26 30 L43 60 L60 30 M26 30 L60 30" stroke="#0a6b49" stroke-width="3.2" fill="none" stroke-linecap="round"/>
+              <path d="M43 40 l3 6 6 1 -4.5 4.5 1 6.5 -5.5 -3 -5.5 3 1-6.5 -4.5-4.5 6-1 z" fill="#c7972f"/>
+            </svg>
+            <h2 class="h-tt" style="font-size:23px">Welcome back</h2>
+            <p style="color:var(--muted);font-size:13px;margin:6px 0 22px">Log in to manage your trade.</p>
+            <label style="font-size:11.5px;font-weight:600;color:var(--muted);margin-bottom:7px">Phone number</label>
+            <div class="field focus" style="margin-bottom:14px"><span style="color:var(--ink);font-weight:600;font-size:14px">+92</span><span style="color:#c8d4ce">|</span><span style="color:var(--ink)">300 1234567</span></div>
+            <label style="font-size:11.5px;font-weight:600;color:var(--muted);margin-bottom:7px">Password</label>
+            <div class="field" style="margin-bottom:10px;justify-content:space-between"><span>••••••••</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#647a70" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <div style="text-align:right;font-size:12px;color:var(--em-700);font-weight:600;margin-bottom:18px">Forgot password?</div>
+            <button class="btn btn-em" style="width:100%">Login</button>
+            <div style="display:flex;align-items:center;gap:12px;margin:18px 0;color:var(--muted);font-size:11.5px"><span style="flex:1;height:1px;background:var(--line)"></span>or continue with<span style="flex:1;height:1px;background:var(--line)"></span></div>
+            <button class="btn btn-out" style="width:100%">
+              <svg width="18" height="18" viewBox="0 0 24 24"><path fill="#4285F4" d="M22 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.6a4.8 4.8 0 0 1-2.1 3.2v2.6h3.4c2-1.8 3.1-4.5 3.1-7.6z"/><path fill="#34A853" d="M12 22c2.7 0 5-1 6.6-2.4l-3.4-2.6c-.9.6-2 1-3.2 1-2.5 0-4.6-1.7-5.4-4H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" d="M6.6 14c-.2-.6-.3-1.3-.3-2s.1-1.4.3-2V7.4H3.1a10 10 0 0 0 0 9.2z"/><path fill="#EA4335" d="M12 6c1.5 0 2.8.5 3.8 1.5l2.8-2.8A10 10 0 0 0 3.1 7.4L6.6 10c.8-2.3 2.9-4 5.4-4z"/></svg>
+              Continue with Google</button>
+            <p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:auto;padding:16px 0">New here? <b style="color:var(--em-700)">Create Account</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="no">03</span><span class="nm">Login</span><span class="dc">Auth</span></div>
+    </div>
+
+    <!-- 4 ROLE -->
+    <div class="frame">
+      <div class="device"><span class="btn-r"></span>
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="sb"><span>9:41</span><span class="r">
+            <svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+            <svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg>
+          </span></div>
+          <div class="pad" style="flex:1;display:flex;flex-direction:column;padding-top:18px">
+            <h2 class="h-tt" style="font-size:25px">Who are you?</h2>
+            <p style="color:var(--muted);font-size:13.5px;margin:6px 0 22px">Choose your business type to continue.</p>
+            <div style="display:flex;flex-direction:column;gap:13px">
+              <div class="role act">
+                <span class="ic" style="background:#0a6b49"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 9h18l-1.5 11H4.5z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></span>
+                <div style="flex:1"><h4>Retailer</h4><p>Order, scan shelves, track udhaar</p></div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0a6b49" stroke-width="2.4"><path d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <div class="role">
+                <span class="ic" style="background:#c7972f"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-6h6v6"/></svg></span>
+                <div style="flex:1"><h4>Distributor</h4><p>Manage retailers, deliveries, AI</p></div>
+              </div>
+              <div class="role">
+                <span class="ic" style="background:#053b29"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 21V10l6 3V10l6 3V4l6 3v14z"/></svg></span>
+                <div style="flex:1"><h4>Manufacturer</h4><p>Analytics, forecasting, market view</p></div>
+              </div>
+            </div>
+            <button class="btn btn-em" style="width:100%;margin-top:auto;margin-bottom:8px">Continue</button>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="no">04</span><span class="nm">Choose Role</span><span class="dc">Segmentation</span></div>
+    </div>
+
+    <!-- 5 RETAILER DASHBOARD -->
+    <div class="frame">
+      <div class="device"><span class="btn-r"></span>
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="sb"><span>9:41</span><span class="r">
+            <svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+            <svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg>
+          </span></div>
+          <div style="flex:1;overflow:hidden;display:flex;flex-direction:column">
+            <div class="topbar">
+              <div><div class="urdu" style="font-size:16px;color:var(--em-700);line-height:1.2">السلام علیکم</div><div style="font-family:'Sora';font-weight:700;font-size:16px">Ali Store</div></div>
+              <div class="avatar">AS</div>
+            </div>
+            <div class="balance">
+              <div class="lbl">Outstanding credit · Udhaar</div>
+              <div class="amt">PKR 42,500</div>
+              <div class="pill" style="background:rgba(255,255,255,.18);color:#fff;margin-top:8px"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M12 5v14M5 12h14"/></svg> Due in 3 days · tap to pay</div>
+            </div>
+            <div class="mini">
+              <div class="card"><div class="lbl">Last order</div><div class="v">PKR 18,200</div><div style="font-size:10px;color:var(--muted);margin-top:2px">2 days ago · delivered</div></div>
+              <div class="card"><div class="lbl">Pending deliveries</div><div class="v" style="color:var(--gold)">1 order</div><div style="font-size:10px;color:var(--muted);margin-top:2px">arriving today</div></div>
+            </div>
+            <div class="actions">
+              <div class="act hl"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><div><div class="t">Speak Order</div><div class="s">Order in Urdu</div></div></div>
+              <div class="act"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 12h10"/></svg></span><div><div class="t">Scan Shelf</div><div class="s">AI stock check</div></div></div>
+              <div class="act"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l2 12h11l2-8H6"/><circle cx="9" cy="20" r="1"/><circle cx="17" cy="20" r="1"/></svg></span><div><div class="t">Order Again</div><div class="s">Repeat last</div></div></div>
+              <div class="act"><span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v5h5"/><path d="M3 8a9 9 0 1 0 3-6"/><path d="M12 7v5l3 2"/></svg></span><div><div class="t">Order History</div><div class="s">Past invoices</div></div></div>
+            </div>
+            <div class="nav">
+              <a class="act"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>Home</a>
+              <a><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14h18V6l-3-4z"/><path d="M3 6h18M9 10a3 3 0 0 0 6 0"/></svg>Orders</a>
+              <a><span class="fab"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/></svg></span></a>
+              <a><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="13" rx="3"/><path d="M2 10h20M16 15h2"/></svg>Wallet</a>
+              <a><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20a8 8 0 0 1 16 0"/></svg>Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="no">05</span><span class="nm">Retailer Home</span><span class="dc">Dashboard</span></div>
+    </div>
+
+    <!-- 6 VOICE -->
+    <div class="frame">
+      <div class="device"><span class="btn-r"></span>
+        <div class="screen">
+          <div class="notch"></div>
+          <div class="sb"><span>9:41</span><span class="r">
+            <svg width="16" height="11" viewBox="0 0 16 11"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4" y="4" width="3" height="7" rx="1"/><rect x="8" y="2" width="3" height="9" rx="1"/><rect x="12" y="0" width="3" height="11" rx="1"/></svg>
+            <svg width="24" height="12" viewBox="0 0 24 12"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.2"/><rect x="3" y="3" width="13" height="6" rx="1.5"/><rect x="21" y="4" width="2" height="4" rx="1"/></svg>
+          </span></div>
+          <div class="voice">
+            <div class="pad" style="width:100%;display:flex;align-items:center;justify-content:space-between;padding-top:6px">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f1a15" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg>
+              <span style="font-family:'Sora';font-weight:600;font-size:15px">Voice Order</span>
+              <span class="pill" style="background:var(--em-50);color:var(--em-700)">● Listening</span>
+            </div>
+            <div class="orb" style="margin-top:22px">
+              <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+              <span class="core"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+            </div>
+            <div class="wave"><i style="animation-delay:0s"></i><i style="animation-delay:.15s"></i><i style="animation-delay:.3s"></i><i style="animation-delay:.1s"></i><i style="animation-delay:.25s"></i><i style="animation-delay:.05s"></i><i style="animation-delay:.2s"></i></div>
+            <div style="font-family:'Sora';font-weight:600;font-size:15px;margin-top:14px">Hold to Speak</div>
+            <div style="font-size:11.5px;color:var(--muted);margin-top:4px">Speak in Urdu — Rabta builds the order</div>
+            <div class="trans">
+              <div class="u">پانچ کریٹ کوکا کولا اور دو درجن شان مصالحہ</div>
+              <div style="font-size:10.5px;font-weight:600;color:var(--muted);margin:6px 0 2px">DETECTED PRODUCTS</div>
+              <div class="line-item"><span class="n">Coca-Cola 1.5L</span><span class="q">5 crates</span></div>
+              <div class="line-item"><span class="n">Shan Masala (mix)</span><span class="q">24 units</span></div>
+            </div>
+            <div class="pad" style="width:100%;margin-top:auto;padding-bottom:18px;padding-top:14px">
+              <button class="btn btn-em" style="width:100%">Confirm Order · 2 items</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cap"><span class="no">06</span><span class="nm">Voice Order</span><span class="dc">AI capture</span></div>
+    </div>
+
+  </div>
+
+  <div class="foot-note">
+    <b>Screens 1–6 of 21.</b> Same emerald &amp; gold system continues through Distributor, Manufacturer, AI Insights, Delivery Route, Command Center and more.<br>Confirm the direction and I'll build the rest in this style.
+  </div>
+</div>
+</body>
+</html>
